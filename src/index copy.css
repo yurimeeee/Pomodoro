@@ -1,0 +1,168 @@
+@import 'tailwindcss';
+
+@plugin 'tailwindcss-animate';
+@import 'tw-animate-css';
+/* @import 'tw-animate-css'; */
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Neumorphic color palette with soft, unified background (Converted to HEX) */
+  --background: #ffffff;
+  --foreground: #1a1926;
+  --card: #ffffff;
+  --card-foreground: #1a1926;
+  --popover: #ffffff;
+  --popover-foreground: #1a1926;
+  --primary: #2d2b44;
+  --primary-foreground: #fbfbfb;
+  --secondary: #f7f7f9;
+  --secondary-foreground: #2d2b44;
+  --muted: #f7f7f9;
+  --muted-foreground: #787799;
+  --accent: #f7f7f9;
+  --accent-foreground: #2d2b44;
+  --destructive: #e8704d;
+  --destructive-foreground: #fefeff;
+  --border: #e8e9ef;
+  --input: #e8e9ef;
+  --ring: #a6a5c2;
+  --chart-1: #d67c47;
+  --chart-2: #82a6b2;
+  --chart-3: #58638c;
+  --chart-4: #c8df64;
+  --chart-5: #e5c369;
+  --radius: 0.625rem;
+
+  /* Neumorphic shadow variables (Converted to HEX) */
+  --shadow-light: #ffffff;
+  --shadow-dark: #d1d1db;
+
+  --sidebar: #fbfbfb;
+  --sidebar-foreground: #1a1926;
+  --sidebar-primary: #2d2b44;
+  --sidebar-primary-foreground: #fbfbfb;
+  --sidebar-accent: #f7f7f9;
+  --sidebar-accent-foreground: #2d2b44;
+  --sidebar-border: #e8e9ef;
+  --sidebar-ring: #a6a5c2;
+}
+
+.dark {
+  /* Dark mode neumorphic palette (Converted to HEX) */
+  --background: #1a1926;
+  --foreground: #fbfbfb;
+  --card: #2d2b44;
+  --card-foreground: #fbfbfb;
+  --popover: #2d2b44;
+  --popover-foreground: #fbfbfb;
+  --primary: #e8e9ef;
+  --primary-foreground: #2d2b44;
+  --secondary: #3f3e5e;
+  --secondary-foreground: #fbfbfb;
+  --muted: #3f3e5e;
+  --muted-foreground: #a6a5c2;
+  --accent: #3f3e5e;
+  --accent-foreground: #fbfbfb;
+  --destructive: #e88c78;
+  --destructive-foreground: #eeeef0;
+  /* 투명도(Alpha)는 RGBA로 유지 */
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.15);
+  --ring: #77759c;
+  --chart-1: #4b4995;
+  --chart-2: #67b7a9;
+  --chart-3: #e5c369;
+  --chart-4: #c858cd;
+  --chart-5: #c66245;
+
+  /* Dark mode neumorphic shadows (Converted to HEX) */
+  --shadow-light: #393744;
+  --shadow-dark: #1d1c2a;
+
+  --sidebar: #2d2b44;
+  --sidebar-foreground: #fbfbfb;
+  --sidebar-primary: #4b4995;
+  --sidebar-primary-foreground: #fbfbfb;
+  --sidebar-accent: #3f3e5e;
+  --sidebar-accent-foreground: #fbfbfb;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: #77759c;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Neumorphic utility classes */
+@layer utilities {
+  .neomorph {
+    box-shadow: 8px 8px 16px var(--shadow-dark), -8px -8px 16px var(--shadow-light);
+  }
+
+  .neomorph-inset {
+    box-shadow: inset 6px 6px 12px var(--shadow-dark), inset -6px -6px 12px var(--shadow-light);
+  }
+
+  .neomorph-sm {
+    box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light);
+  }
+
+  .neomorph-hover {
+    transition: all 0.3s ease;
+  }
+
+  .neomorph-hover:hover {
+    box-shadow: 12px 12px 24px var(--shadow-dark), -12px -12px 24px var(--shadow-light);
+  }
+
+  .neomorph-pressed {
+    box-shadow: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light);
+  }
+}
