@@ -17,12 +17,12 @@ const TimerController = ({ status, onStart, onPause, onReset, onSkip }: TimerCon
   return (
     <div className="flex items-center justify-center gap-4">
       {status === 'running' ? (
-        <Button onClick={onPause} size="lg" variant="outline" className="h-16 px-10 text-base rounded-full bg-transparent">
+        <Button onClick={onPause} size="lg" variant="outline" className="h-12 px-6 text-sm rounded-full bg-transparent">
           <Pause className="w-5 h-5 mr-2" />
           {t('pause')}
         </Button>
       ) : (
-        <Button onClick={onStart} size="lg" className="h-16 px-10 text-base rounded-full">
+        <Button onClick={onStart} size="lg" className="h-12 px-6 text-sm rounded-full">
           <Play className="w-5 h-5 mr-2" />
           {status === 'paused' ? t('continue') : t('start')}
         </Button>
@@ -30,10 +30,10 @@ const TimerController = ({ status, onStart, onPause, onReset, onSkip }: TimerCon
 
       {status !== 'idle' && (
         <>
-          <Button onClick={onReset} variant="outline" size="icon" className="h-14 w-14 rounded-full bg-transparent" aria-label={t('reset')}>
+          <Button onClick={onReset} variant="outline" size="icon" className="h-12 w-12 rounded-full bg-transparent" aria-label={t('reset')}>
             <RotateCcw className="w-5 h-5" />
           </Button>
-          <Button onClick={onSkip} variant="outline" size="icon" className="h-14 w-14 rounded-full bg-transparent" aria-label={t('skip')}>
+          <Button onClick={onSkip} variant="outline" size="icon" className="h-12 w-12 rounded-full bg-transparent" aria-label={t('skip')}>
             <SkipForward className="w-5 h-5" />
           </Button>
         </>
