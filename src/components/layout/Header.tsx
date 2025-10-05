@@ -1,4 +1,5 @@
 import LanguageToggle from '@components/ui/LanguageToggle';
+import Login from '@components/ui/Login';
 import ThemeToggle from '@components/ui/ThemeToggle';
 import { useTranslation } from 'react-i18next';
 
@@ -15,6 +16,7 @@ const Header = () => {
         <div className="flex items-center gap-3">
           <LanguageToggle />
           <ThemeToggle />
+          <Login />
         </div>
       </div>
     </header>

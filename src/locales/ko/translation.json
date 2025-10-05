@@ -38,5 +38,8 @@
   "cumulativeFocusTime": "누적 집중 시간",
   "totalSessionsCount": "전체",
   "sessionCompletionRate": "세션 완료 비율",
-  "basedOnDistractions": "방해 요소 기반"
+  "basedOnDistractions": "방해 요소 기반",
+  "login": "로그인",
+  "loginSubtitle": "로그인 후 집중의 시간을 가지세요.",
+  "googleLoign": "구글 로그인"
 }
